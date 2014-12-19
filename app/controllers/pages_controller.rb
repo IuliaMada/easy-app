@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 	def home
-		puts "This is home"
 	end
+	def home2
+	end
+
 end
