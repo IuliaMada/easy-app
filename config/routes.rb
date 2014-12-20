@@ -1,8 +1,30 @@
 Rails.application.routes.draw do
+  get 'products/index'
+
+  get 'products/show'
+
+  get 'products/edit'
+
+  get 'products/delete'
+
+  # get 'categories/index'
+
+  # get 'categories/show'
+
+  # get 'categories/new'
+
+  # get 'categories/edit'
+
+  # get 'categories/delete'
+
+  resources :categories
+   get 'categories/:id/delete' => 'categories#delete', :as => :categories_delete
+
   get 'pages/home'
   root 'pages#home'
   get 'pages/erb_demo'
   get 'pages/render_demo'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
