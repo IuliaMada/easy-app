@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  get 'products/index'
+  get '/' => 'pages#home'
+  # root 'pages#home'
+  # get 'pages/render_demo'
+  # get 'products/index'
 
-  get 'products/show'
+  # get 'products/show'
 
-  get 'products/edit'
+  # get 'products/edit'
 
-  get 'products/delete'
+  # get 'products/delete'
+  resources :products
+  get 'products/:id/delete' => 'products#delete', :as => :products_delete
 
   # get 'categories/index'
 
@@ -20,10 +25,10 @@ Rails.application.routes.draw do
   resources :categories
    get 'categories/:id/delete' => 'categories#delete', :as => :categories_delete
 
-  get 'pages/home'
-  root 'pages#home'
-  get 'pages/erb_demo'
-  get 'pages/render_demo'
+  # get 'pages/home'
+  # root 'pages#home'
+  # get 'pages/erb_demo'
+  # get 'pages/render_demo'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
